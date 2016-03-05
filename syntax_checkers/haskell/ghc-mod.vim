@@ -56,7 +56,8 @@ function! SyntaxCheckers_haskell_ghc_mod_IsAvailable() dict
     "
     " References:
     " https://hackage.haskell.org/package/ghc-mod-5.4.0.0/changelog
-    let s:ghc_mod_bailout = syntastic#util#versionIsAtLeast(parsed_ver, [5, 4])
+    let s:ghc_mod_bailout = 0
+    "syntastic#util#versionIsAtLeast(parsed_ver, [5, 4])
 
     return (s:ghc_mod_new >= 0) && (v:version >= 704 || s:ghc_mod_new) && !s:ghc_mod_bailout
 endfunction
